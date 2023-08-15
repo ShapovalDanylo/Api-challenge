@@ -6,6 +6,7 @@ import {
   sortArrayRouter,
   factorialRouter,
   reverseWordsRouter,
+  fibonacciSequenceRouter,
 } from './routes';
 
 const app = express();
@@ -20,6 +21,7 @@ router.get('/challenge', challengeRouter);
 router.post('/sortArray', sortArrayRouter);
 router.post('/factorial', factorialRouter);
 router.post('/reverseWords', reverseWordsRouter);
+router.post('/fibonacciSequence', fibonacciSequenceRouter);
 
 app.use('/api', router);
 
