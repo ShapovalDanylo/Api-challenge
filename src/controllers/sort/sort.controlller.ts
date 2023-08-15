@@ -15,7 +15,7 @@ class SortController {
         }
 
         const sortedArray = integers.sort( (a,b) => a - b );
-        return res.json({ sortedArray });
+        return res.status(200).json({ sortedArray });
     };
 };
 

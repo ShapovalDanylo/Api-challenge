@@ -4,6 +4,7 @@ import {
   challengeRouter,
   errorRouter,
   sortRouter,
+  factorialRouter,
 } from './routes';
 
 const app = express();
@@ -16,6 +17,7 @@ router.use(json());
 router.get('/', apiRouter);
 router.get('/challenge', challengeRouter);
 router.post('/sort', sortRouter);
+router.post('/factorial', factorialRouter);
 
 app.use('/api', router);
 
