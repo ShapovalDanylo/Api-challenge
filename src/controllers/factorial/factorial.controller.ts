@@ -27,4 +27,4 @@ class FactorialController {
     }
 }
 
-export const factorialControllerInstance = new FactorialController();
+export const FactorialControllerInstance = new FactorialController();

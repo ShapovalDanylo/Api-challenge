@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-class SortController {
+class SortArrayController {
     getSortedArray(req: Request, res: Response) {
     
         const { integers } = req.body;
@@ -19,4 +19,4 @@ class SortController {
     };
 };
 
-export const sortControllerInstance = new SortController();
+export const SortArrayControllerInstance = new SortArrayController();

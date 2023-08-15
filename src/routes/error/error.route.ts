@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { errorControllerInstance } from '../../controllers';
+import { ErrorControllerInstance } from '../../controllers';
 
 const errorRouter = Router();
 
-errorRouter.get('*', errorControllerInstance.getError);
+errorRouter.get('*', ErrorControllerInstance.getError);
 
 export { errorRouter };

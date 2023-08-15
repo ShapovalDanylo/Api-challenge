@@ -3,8 +3,9 @@ import {
   apiRouter,
   challengeRouter,
   errorRouter,
-  sortRouter,
+  sortArrayRouter,
   factorialRouter,
+  reverseWordsRouter,
 } from './routes';
 
 const app = express();
@@ -16,8 +17,9 @@ router.use(json());
 
 router.get('/', apiRouter);
 router.get('/challenge', challengeRouter);
-router.post('/sort', sortRouter);
+router.post('/sortArray', sortArrayRouter);
 router.post('/factorial', factorialRouter);
+router.post('/reverseWords', reverseWordsRouter);
 
 app.use('/api', router);
 

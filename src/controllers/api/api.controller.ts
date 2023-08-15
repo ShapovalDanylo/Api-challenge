@@ -6,4 +6,4 @@ class ApiController {
     };
 };
 
-export const apiControllerInstance = new ApiController();
+export const ApiControllerInstance = new ApiController();

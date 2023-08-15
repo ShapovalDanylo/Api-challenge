@@ -6,4 +6,4 @@ class ErrorController {
     };
 };
 
-export const errorControllerInstance = new ErrorController();
+export const ErrorControllerInstance = new ErrorController();

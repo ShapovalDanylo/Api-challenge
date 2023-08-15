@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { apiControllerInstance } from '../../controllers';
+import { ApiControllerInstance } from '../../controllers';
 
 const apiRouter = Router();
 
-apiRouter.get('/', apiControllerInstance.getHealthCheck);
+apiRouter.get('/', ApiControllerInstance.getHealthCheck);
 
 export { apiRouter };

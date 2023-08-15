@@ -8,4 +8,4 @@ class ChallengeController {
     };
 };
 
-export const challengeControllerInstance = new ChallengeController();
+export const ChallengeControllerInstance = new ChallengeController();
