@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
 class ErrorController {
     getError(req: Request, res: Response) {
