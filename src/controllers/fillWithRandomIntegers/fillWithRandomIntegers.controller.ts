@@ -15,17 +15,17 @@ class NumbersController {
             }
 
             const randomNumbers = [];
-            for (let i = 0; i <= n; i++) {
+            for (let i = 0; i < n; i++) {
                 randomNumbers.push([Math.floor(Math.random() * 1000)]);
             }
 
             const query = 'INSERT INTO Numbers (number) VALUES ($1)';
             await DatabaseInstance.query('BEGIN');
-            await Promise.all(
-              randomNumbers.map(async (number) => {
+
+            for (const number of randomNumbers) {
                 await DatabaseInstance.query(query, number);
-              })
-            );
+            }
+            
             await DatabaseInstance.query('COMMIT');
 
             return res.json({ message: `${n} random numbers inserted successfully.` });
