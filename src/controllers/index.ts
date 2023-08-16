@@ -5,3 +5,4 @@ export * from './sortArray/sortArray.controlller';
 export * from './factorial/factorial.controller';
 export * from './reverseWords/reverseWords.controller';
 export * from './fibonacciSequence/fibonacciSequence.controller';
+export * from './fillWithRandomIntegers/fillWithRandomIntegers.controller';

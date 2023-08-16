@@ -5,3 +5,4 @@ export * from './sortArray/sortArray.route';
 export * from './factorial/factorial.route';
 export * from './reverseWords/reverseWords.route';
 export * from './fibonacciSequence/fibonacciSequence.route';
+export * from './fillWithRandomIntegers/fillWithRandomIntegers.route';
