@@ -6,3 +6,5 @@ export * from './factorial/factorial.route';
 export * from './reverseWords/reverseWords.route';
 export * from './fibonacciSequence/fibonacciSequence.route';
 export * from './fillWithRandomIntegers/fillWithRandomIntegers.route';
+export * from './numbersInRange/numbersInRange.route';
+export * from './numberById/numberById.route';

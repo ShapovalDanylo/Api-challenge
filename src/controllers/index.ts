@@ -6,3 +6,5 @@ export * from './factorial/factorial.controller';
 export * from './reverseWords/reverseWords.controller';
 export * from './fibonacciSequence/fibonacciSequence.controller';
 export * from './fillWithRandomIntegers/fillWithRandomIntegers.controller';
+export * from './numbersInRange/numbersInRange.controller';
+export * from './numberById/numberById.controller';

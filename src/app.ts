@@ -8,6 +8,8 @@ import {
   reverseWordsRouter,
   fibonacciSequenceRouter,
   numbersRouter,
+  numbersInRangeRouter,
+  numberByIdRouter,
 } from './routes';
 
 const app = express();
@@ -24,6 +26,8 @@ router.post('/factorial', factorialRouter);
 router.post('/reverseWords', reverseWordsRouter);
 router.post('/fibonacciSequence', fibonacciSequenceRouter);
 router.post('/generate', numbersRouter);
+router.post('/numbersInRange', numbersInRangeRouter);
+router.post('/numberById', numberByIdRouter);
 
 app.use('/api', router);
 
