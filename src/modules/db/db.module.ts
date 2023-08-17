@@ -5,11 +5,11 @@ class Database {
 
   constructor() {
     this.pool = new Pool({
-      user: "postgres",
-      host: "localhost",
-      database: "Challenge-api-db",
-      password: "admin",
-      port: 5432,
+      user: process.env.DB_USER,
+      host: process.env.DB_HOST,
+      database: process.env.DB_DATABASE,
+      password: process.env.DB_PASSWORD,
+      port: parseInt(process.env.DB_PORT as string, 10) || 5432,
     });
   }
 

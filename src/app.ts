@@ -1,3 +1,4 @@
+require('dotenv').config();
 import express, { Router, json } from 'express';
 import {
   apiRouter,
