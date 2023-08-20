@@ -8,3 +8,4 @@ export * from './fibonacciSequence/fibonacciSequence.controller';
 export * from './fillWithRandomProducts/fillWithRandomProducts.controller';
 export * from './productsInRange/productsInRange.controller';
 export * from './productById/productById.controller';
+export * from './apiCalls/apiCalls.controller';

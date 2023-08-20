@@ -11,6 +11,7 @@ import {
   ProductsRouter,
   productsInRangeRouter,
   productByIdRouter,
+  apiCallsRouter,
 } from './routes';
 
 const app = express();
@@ -29,6 +30,7 @@ router.post('/fibonacciSequence', fibonacciSequenceRouter);
 router.post('/generate', ProductsRouter);
 router.post('/productsInRange', productsInRangeRouter);
 router.post('/productById', productByIdRouter);
+router.get('/apiCalls', apiCallsRouter);
 
 app.use('/api', router);
 

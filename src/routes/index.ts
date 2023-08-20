@@ -8,3 +8,4 @@ export * from './fibonacciSequence/fibonacciSequence.route';
 export * from './fillWithRandomProducts/fillWithRandomProducts.route';
 export * from './productsInRange/productsInRange.route';
 export * from './productById/productById.route';
+export * from './apiCalls/apiCalls.route';
