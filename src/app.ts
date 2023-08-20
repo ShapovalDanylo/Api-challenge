@@ -8,13 +8,13 @@ import {
   factorialRouter,
   reverseWordsRouter,
   fibonacciSequenceRouter,
-  numbersRouter,
-  numbersInRangeRouter,
-  numberByIdRouter,
+  ProductsRouter,
+  productsInRangeRouter,
+  productByIdRouter,
 } from './routes';
 
 const app = express();
-const port = 3000;
+const port = process.env.APP_PORT || 3000;
 
 const router = Router();
 
@@ -26,9 +26,9 @@ router.post('/sortArray', sortArrayRouter);
 router.post('/factorial', factorialRouter);
 router.post('/reverseWords', reverseWordsRouter);
 router.post('/fibonacciSequence', fibonacciSequenceRouter);
-router.post('/generate', numbersRouter);
-router.post('/numbersInRange', numbersInRangeRouter);
-router.post('/numberById', numberByIdRouter);
+router.post('/generate', ProductsRouter);
+router.post('/productsInRange', productsInRangeRouter);
+router.post('/productById', productByIdRouter);
 
 app.use('/api', router);
 

@@ -3,6 +3,6 @@ import { ErrorControllerInstance } from '../../controllers';
 
 const errorRouter = Router();
 
-errorRouter.get('*', ErrorControllerInstance.getError);
+errorRouter.all('*', ErrorControllerInstance.getError);
 
 export { errorRouter };
