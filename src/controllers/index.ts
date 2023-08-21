@@ -5,7 +5,7 @@ export * from './sortArray/sortArray.controlller';
 export * from './factorial/factorial.controller';
 export * from './reverseWords/reverseWords.controller';
 export * from './fibonacciSequence/fibonacciSequence.controller';
-export * from './fillWithRandomProducts/fillWithRandomProducts.controller';
+export * from './generate/generate.controller';
 export * from './productsInRange/productsInRange.controller';
 export * from './productById/productById.controller';
 export * from './apiCalls/apiCalls.controller';

@@ -3,14 +3,14 @@ import { Request, Response } from 'express';
 class FactorialController {
     getFactorial(req: Request, res: Response) {
 
-        const { integer } = req.body;
+        const { integer } = req.query;
 
-        if(integer < 1 || integer > 20) {
-            return res.status(400).json({ error: 'Value can only be a number between 1 and 20 inclusive' });
+        if(!integer || typeof +integer !== 'number') {
+            return res.status(400).json({ error: 'The value can only be a number' });
         }
 
-        if(!integer || typeof integer !== 'number') {
-            return res.status(400).json({ error: 'The value can only be a number' });
+        if(+integer < 1 || +integer > 20) {
+            return res.status(400).json({ error: 'Value can only be a number between 1 and 20 inclusive' });
         }
 
         function factorial(n: number): number {
@@ -21,7 +21,7 @@ class FactorialController {
             }
         };
 
-        const result = factorial(integer);
+        const result = factorial(+integer);
 
         return res.status(200).json({ result });
     }

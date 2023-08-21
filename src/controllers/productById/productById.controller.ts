@@ -4,14 +4,14 @@ import { DatabaseInstance } from '../../modules';
 class ProductByIdController {
     async getProductById(req: Request, res: Response) {
         try {
-            const { id } = req.body;
-      
-            if(id < 0) {
-              return res.status(400).json({ error: 'Invalid input. Value ID must be a positive integer.' });
+            const { id } = req.params;
+
+            if(!id || typeof +id !== 'number') {
+              return res.status(400).json({ error: 'The value can only be a number' });
             }
       
-            if(!id || typeof id !== 'number') {
-              return res.status(400).json({ error: 'The value can only be a number' });
+            if(+id < 0) {
+              return res.status(400).json({ error: 'Invalid input. Value ID must be a positive integer.' });
             }
       
             const result = await DatabaseInstance.query('SELECT * FROM "Products" WHERE id = $1', [id]);

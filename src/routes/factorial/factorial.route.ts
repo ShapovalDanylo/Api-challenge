@@ -3,6 +3,6 @@ import { FactorialControllerInstance } from '../../controllers';
 
 const factorialRouter = Router();
 
-factorialRouter.post('/factorial', FactorialControllerInstance.getFactorial);
+factorialRouter.get('/factorial', FactorialControllerInstance.getFactorial);
 
 export { factorialRouter };

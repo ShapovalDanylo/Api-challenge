@@ -23,14 +23,14 @@ router.use(json());
 
 router.get('/', apiRouter);
 router.get('/challenge', challengeRouter);
-router.post('/sortArray', sortArrayRouter);
-router.post('/factorial', factorialRouter);
-router.post('/reverseWords', reverseWordsRouter);
-router.post('/fibonacciSequence', fibonacciSequenceRouter);
-router.post('/generate', ProductsRouter);
-router.post('/productsInRange', productsInRangeRouter);
-router.post('/productById', productByIdRouter);
+router.get('/factorial', factorialRouter);
+router.get('/productById/:id', productByIdRouter);
 router.get('/apiCalls', apiCallsRouter);
+router.get('/fibonacciSequence', fibonacciSequenceRouter);
+router.get('/generate', ProductsRouter);
+router.get('/productsInRange', productsInRangeRouter);
+router.post('/sortArray', sortArrayRouter);
+router.post('/reverseWords', reverseWordsRouter);
 
 app.use('/api', router);
 

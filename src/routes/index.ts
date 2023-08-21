@@ -5,7 +5,7 @@ export * from './sortArray/sortArray.route';
 export * from './factorial/factorial.route';
 export * from './reverseWords/reverseWords.route';
 export * from './fibonacciSequence/fibonacciSequence.route';
-export * from './fillWithRandomProducts/fillWithRandomProducts.route';
+export * from './generate/generate.router';
 export * from './productsInRange/productsInRange.route';
 export * from './productById/productById.route';
 export * from './apiCalls/apiCalls.route';

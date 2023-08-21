@@ -3,6 +3,6 @@ import { FibonacciSequenceControllerInstance } from '../../controllers';
 
 const fibonacciSequenceRouter = Router();
 
-fibonacciSequenceRouter.post('/fibonacciSequence', FibonacciSequenceControllerInstance.getFibonacciSequence);
+fibonacciSequenceRouter.get('/fibonacciSequence', FibonacciSequenceControllerInstance.getFibonacciSequence);
 
 export { fibonacciSequenceRouter };

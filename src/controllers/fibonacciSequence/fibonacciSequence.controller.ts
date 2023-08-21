@@ -3,14 +3,14 @@ import { Request, Response } from 'express';
 class FibonacciSequenceController {
     getFibonacciSequence(req: Request, res: Response) {
         
-        const { amount } = req.body;
+        const { amount } = req.query;
 
-        if(amount < 1 || amount > 100) {
-            return res.status(400).json({ error: 'The number must not be less than 1 and greater than 100' });
+        if(!amount || typeof +amount !== 'number') {
+          return res.status(400).json({ error: 'Invalid data format' });
         }
 
-        if(!amount || typeof amount !== 'number') {
-            return res.status(400).json({ error: 'Invalid data format' });
+        if(+amount < 1 || +amount > 100) {
+            return res.status(400).json({ error: 'The number must not be less than 1 and greater than 100' });
         }
         
         function generateFibonacci(n: number): number[] {
@@ -28,7 +28,7 @@ class FibonacciSequenceController {
           return fibonacciArray;
         }
 
-        const fibonacciNumbers = generateFibonacci(amount);
+        const fibonacciNumbers = generateFibonacci(+amount);
 
         return res.status(200).json({ fibonacciNumbers });
     }

@@ -5,18 +5,18 @@ import { faker } from '@faker-js/faker';
 class ProductsController {
     async generateRandomProducts(req: Request, res: Response) {
         try {
-            const { n } = req.body;
+            const { amount } = req.query;
 
-            if(n < 0 || n > 10000) {
-                return res.status(400).json({ error: 'Value can only be a number between 1 and 10000 inclusive' });
-            }
-
-            if(!n || typeof n !== 'number') {
+            if(!amount || typeof +amount !== 'number') {
                 return res.status(400).json({ error: 'The value can only be a number' });
             }
 
+            if(+amount < 0 || +amount > 10000) {
+                return res.status(400).json({ error: 'Value can only be a number between 1 and 10000 inclusive' });
+            }
+
             const randomProducts = [];
-            for (let i = 0; i < n; i++) {
+            for (let i = 0; i < +amount; i++) {
                 randomProducts.push({
                     productName: faker.commerce.product(),
                     productPrice: faker.number.float({ min: 1, max: 10000 }).toFixed(2),
@@ -33,7 +33,7 @@ class ProductsController {
             
             await DatabaseInstance.query('COMMIT');
 
-            return res.json({ message: `${n} random products inserted successfully.` });
+            return res.json({ message: `${amount} random products inserted successfully.` });
         } catch(error) {
             console.error('Error:', error);
             await DatabaseInstance.query('ROLLBACK');

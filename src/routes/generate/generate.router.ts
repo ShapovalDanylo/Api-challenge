@@ -3,6 +3,6 @@ import { ProductsControllerInstance } from '../../controllers';
 
 const ProductsRouter = Router();
 
-ProductsRouter.post('/generate', ProductsControllerInstance.generateRandomProducts);
+ProductsRouter.get('/generate', ProductsControllerInstance.generateRandomProducts);
 
 export { ProductsRouter };

@@ -3,6 +3,6 @@ import { ProductByIdControllerInstance } from '../../controllers';
 
 const productByIdRouter = Router();
 
-productByIdRouter.post('/productById', ProductByIdControllerInstance.getProductById);
+productByIdRouter.get('/productById/:id', ProductByIdControllerInstance.getProductById);
 
 export { productByIdRouter };

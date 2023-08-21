@@ -3,6 +3,6 @@ import { ProductsInRangeControllerInstance } from '../../controllers';
 
 const productsInRangeRouter = Router();
 
-productsInRangeRouter.post('/productsInRange', ProductsInRangeControllerInstance.getProductsInRange);
+productsInRangeRouter.get('/productsInRange', ProductsInRangeControllerInstance.getProductsInRange);
 
 export { productsInRangeRouter };
