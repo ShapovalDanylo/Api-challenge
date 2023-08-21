@@ -18,7 +18,7 @@ class ProductsInRangeController {
         return res.status(400).json({ error: 'FROM value can not be greater than TO value.' })
       }
 
-      const records = await DatabaseInstance.query('SELECT * FROM Products LIMIT $1 OFFSET $2', [to - from + 1, from - 1]);
+      const records = await DatabaseInstance.query('SELECT * FROM "Products" LIMIT $1 OFFSET $2', [to - from + 1, from - 1]);
       const result = records.rows;
 
       return res.status(200).json({ result });

@@ -14,7 +14,7 @@ class ProductByIdController {
               return res.status(400).json({ error: 'The value can only be a number' });
             }
       
-            const result = await DatabaseInstance.query('SELECT * FROM Products WHERE id = $1', [id]);
+            const result = await DatabaseInstance.query('SELECT * FROM "Products" WHERE id = $1', [id]);
       
             if (result.rows.length === 0) {
               return res.status(404).json({ error: 'No record found with the specified ID.' });

@@ -24,7 +24,7 @@ class ProductsController {
                 });
             }
 
-            const query = 'INSERT INTO Products (productName, productPrice, productDescription) VALUES ($1, $2, $3)';
+            const query = 'INSERT INTO "Products" (productName, productPrice, productDescription) VALUES ($1, $2, $3)';
             await DatabaseInstance.query('BEGIN');
 
             for (const product of randomProducts) {
