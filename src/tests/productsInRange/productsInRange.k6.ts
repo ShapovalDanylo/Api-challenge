@@ -7,6 +7,6 @@ export const options = {
 };
 
 export default function() {
-    http.get('https://wa-danil.azurewebsites.net/api/productsInRange?from=10&to=100');
+    http.get('https://wa-danil.azurewebsites.net/api/productsInRange?rangeStart=10&rangeEnd=100');
 	sleep(1); 
 }

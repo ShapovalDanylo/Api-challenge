@@ -7,6 +7,6 @@ export const options = {
 };
 
 export default function() {
-    http.get('https://wa-danil.azurewebsites.net/api/fibonacciSequence?amount=11');
+    http.get('https://wa-danil.azurewebsites.net/api/fibonacciSequence?n=11');
 	sleep(1); 
 }

@@ -11,7 +11,7 @@ export default function() {
     const reverseWordsTestUrl = 'https://wa-danil.azurewebsites.net/api/reverseWords';
 
     const payload = {
-        inputString: "Nest is database agnostic, allowing you to easily integrate with any SQL or NoSQL database"
+        sentence: "Nest is database agnostic, allowing you to easily integrate with any SQL or NoSQL database"
     }
 
     const headers = { 'Content-Type': 'application/json' };

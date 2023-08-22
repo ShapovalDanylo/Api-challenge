@@ -3,13 +3,13 @@ import { Request, Response } from 'express';
 class ReverseWordsController {
     getStringWithReversedWords(req: Request, res: Response) {
 
-        const { inputString } = req.body;
+        const { sentence } = req.body;
 
-        if(!inputString || typeof inputString !== 'string') {
+        if(!sentence || typeof sentence !== 'string') {
             return res.status(400).json({ error: 'Invalid data format' });
         }
 
-        const outputString = inputString.split(' ').map(word => {
+        const outputString = sentence.split(' ').map(word => {
             return word.split('').reverse().join('');
         }).join(' ');;
 

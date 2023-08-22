@@ -7,6 +7,6 @@ export const options = {
 };
 
 export default function() {
-    http.get('https://wa-danil.azurewebsites.net/api/factorial?integer=20');
+    http.get('https://wa-danil.azurewebsites.net/api/factorial?n=20');
 	sleep(1); 
 }

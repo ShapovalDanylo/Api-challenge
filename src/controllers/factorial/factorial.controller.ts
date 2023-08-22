@@ -3,25 +3,25 @@ import { Request, Response } from 'express';
 class FactorialController {
     getFactorial(req: Request, res: Response) {
 
-        const { integer } = req.query;
+        const n = Number(req.query.n);
 
-        if(!integer || typeof +integer !== 'number') {
+        if(!n || typeof n !== 'number') {
             return res.status(400).json({ error: 'The value can only be a number' });
         }
 
-        if(+integer < 1 || +integer > 20) {
+        if(n < 1 || n > 20) {
             return res.status(400).json({ error: 'Value can only be a number between 1 and 20 inclusive' });
         }
 
-        function factorial(n: number): number {
-            if(n === 0 || n === 1) {
+        function factorial(number: number): number {
+            if(number === 0 || number === 1) {
                 return 1;
             } else {
-                return n * factorial(n - 1);
+                return number * factorial(number - 1);
             }
         };
 
-        const result = factorial(+integer);
+        const result = factorial(n);
 
         return res.status(200).json({ result });
     }
