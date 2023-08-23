@@ -12,7 +12,9 @@ import {
   productsInRangeRouter,
   productByIdRouter,
   apiCallsRouter,
-} from './routes';
+  readTxtFileRouter,
+  largeFileRouter,
+} from './endpoints';
 
 const app = express();
 const port = process.env.APP_PORT || 3000;
@@ -29,6 +31,8 @@ router.get('/apiCalls', apiCallsRouter);
 router.get('/fibonacciSequence', fibonacciSequenceRouter);
 router.get('/generate', ProductsRouter);
 router.get('/productsInRange', productsInRangeRouter);
+router.get('/readTxtFile/:container/:file', readTxtFileRouter);
+router.get('/largeFile/:container/:file', largeFileRouter);
 router.post('/sortArray', sortArrayRouter);
 router.post('/reverseWords', reverseWordsRouter);
 

@@ -6,6 +6,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@azure/storage-blob": "^12.15.0",
     "@faker-js/faker": "^8.0.2",
     "@types/express": "^4.17.17",
     "@types/k6": "^0.46.2",
