@@ -7,6 +7,6 @@ export const options = {
 };
 
 export default function() {
-    http.get('https://wa-danil.azurewebsites.net/api/readTxtFile/documents/azureText.pdf');
+    http.get('https://wa-danil.azurewebsites.net/api/readTxtFile/documents/azureText.txt');
     sleep(1);
 };
