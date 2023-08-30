@@ -3,12 +3,13 @@ import { sleep } from 'k6';
 
 export const options = {
     vus: 3,
-    duration: '30s',
+    duration: '5m',
 };
 
 export default function() {
 
-    const sortArrayUrl = 'https://wa-danil.azurewebsites.net/api/sortArray';
+    // const sortArrayUrl = 'https://wa-danil.azurewebsites.net/api/sortArray';
+    const sortArrayUrl = 'http://localhost:3000/api/sortArray';
 
     const payload = {
         integers: [

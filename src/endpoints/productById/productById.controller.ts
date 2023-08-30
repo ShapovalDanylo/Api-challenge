@@ -1,32 +1,45 @@
 import { Request, Response } from 'express';
+import NodeCache from 'node-cache';
 import { DatabaseInstance } from '../../modules';
+
+const cache = new NodeCache();
 
 class ProductByIdController {
     async getProductById(req: Request, res: Response) {
         try {
             const { id } = req.params;
 
-            if(!id || typeof +id !== 'number') {
-              return res.status(400).json({ error: 'The value can only be a number' });
+            if (!id || typeof +id !== 'number') {
+                return res.status(400).json({ error: 'The value can only be a number' });
             }
-      
-            if(+id < 0) {
-              return res.status(400).json({ error: 'Invalid input. Value ID must be a positive integer.' });
+
+            if (+id < 0) {
+                return res.status(400).json({ error: 'Invalid input. Value ID must be a positive integer.' });
             }
-      
+
+            const cacheKey = `productById_${id}`;
+            const cachedData = cache.get(cacheKey);
+
+            if (cachedData) {
+                return res.status(200).json({ value: cachedData });
+            }
+
             const result = await DatabaseInstance.query('SELECT * FROM "Products" WHERE id = $1', [id]);
-      
+
             if (result.rows.length === 0) {
-              return res.status(404).json({ error: 'No record found with the specified ID.' });
+                return res.status(404).json({ error: 'No record found with the specified ID.' });
             }
-      
+
             const value = result.rows[0];
-      
+
+            cache.set(cacheKey, value, 5 * 60);
+
             return res.status(200).json({ value });
-          } catch(error) {
+
+        } catch (error) {
             console.error('Error:', error);
             return res.status(500).json({ error: 'An error occurred' });
-          }
+        }
     }
 }
 
